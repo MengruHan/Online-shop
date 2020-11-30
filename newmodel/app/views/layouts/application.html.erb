@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>淘宝界面</title>
 <html>
   <head>
     <title>Newmodel</title>
@@ -11,7 +15,25 @@
   
 
   <body>
-    <p class="navbar-text float-right">
+
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    
+
+
+
+  <div id="top">
+   <div id="top1">
+    
+    <div style="left: ;">
+    
+     <a href="#">淘宝首页</a>
+     <a href="#">我的淘宝</a>
+     <a href="#">购物车</a>
+     <a href="#">收藏夹</a>
+     <a href="#">商家支持</a>
+     <a href="#">网站导航</a>
 
     <% if current_user %>
 
@@ -21,15 +43,25 @@
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
-   </p>
+    <% end %>     
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+    </div>
+   </div>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <%= yield %>
+   <div id="top2">
+    <!--分为两个div，都向左浮动，搜索框部分注意调整左外边距与顶外边距的距离 -->
+    <!--搜索框和搜索框下面的文字拆分为连个标签部分，由于统一居中，所以搜索框需要进行重定位-->
+    <div style="margin-top: 20px; text-align: center;">
+     <input type="text" name="search" style="width: 500px; height: 25px; border: 1px solid gray; outline: none; border-radius: 2px;" />
+     <input type="submit" value="搜 索" />
+    </div>
+   </div>
+  </div>
+
+   <div id="main">
+  <%= yield %>
+</div>
   </body>
- 
-
-
 </html>
 
